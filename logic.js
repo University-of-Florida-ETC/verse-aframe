@@ -197,12 +197,10 @@ function handleChoice(choiceID) {
         //nextScene = videPathMap[nextScene]["option1Next"];
         //nextID = videoPathMap[nextScene]["id"];
         //videoSphere.setAttribute("src", nextID);
-
       }
     });
     nextVideo.play();
   } 
-
   else {
     console.log("entering option2 block")
     console.log(videoPathMap[currentScene]);
@@ -245,7 +243,6 @@ function populateButtons(scene) {
     console.log(currentScene);
     handleChoice("option1");
   }
-
   let option1 = videoPathMap[currentScene].option1;
   let option2 = videoPathMap[currentScene].option2;
   let option1Next = videoPathMap[scene].option1Next;
@@ -260,11 +257,7 @@ function populateButtons(scene) {
   option2Button.setAttribute("visible", "true");
   option1Plane.setAttribute("data-clickable");
   option2Plane.setAttribute("data-clickable");
-
 }
-
-
-
 
 function enterRestaurant() {
   document.getElementById("scene0").pause();
@@ -284,11 +277,5 @@ function enterRestaurant() {
   option2.setAttribute("visible", "true");
   option2Plane.setAttribute("data-clickable");
   populateButtons("scene1-0");
-
-
-
   myVideo.play();
-
 }
-
-
