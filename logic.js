@@ -1,59 +1,148 @@
-const videoPathMap = {
-  "scene0": { //Parking lot
-    "id": "#scene0",
-    "next": "#scene1-0",
-  },
-  "scene1-0": { //welcome to the restaurant
+/*const videoPathMap = {
+  "scene1-0": { 
     "id": "#scene1-0",
     "option1": "Say nothing",
     "option2": "Respond",
     "option1Next": "scene1-a", 
     "option2Next": "scene1-b",
   },
-  "scene1-a": { //host sorry
-    "id": "#scene1-a",
-    "option1Next": "scene1-0",
+}*/
+
+const videoPathMap = {
+  "scene1": {
+    id: "#scene1",
+    option1Next: "scene3a",
   },
-  "scene1-b": { //host follow me
-    "id": "#scene1-b",
-    "option1Next": "scene2",
+  "scene3a": {
+    id: "#scene3a",
+    option1: "Say nothing",
+    option2: "Greet the hostess",
+    option1Next: "scene3b",
+    option2Next: "scene3c",
   },
-  "scene2-ambient": { //at the table ambient after host walks you out
-    "id": "#scene2-ambient",
-    "option1": "Wait for server",
-    "option2": "Call loudly for server",
-    "option1Next": "scene3",
-    "option2Next": "scene4b"
+  "scene3b": {
+    id: "#scene3b",
+    option1Next: "scene3a",
   },
-  "scene2": { //Waiter will be right with you
-    "id": "#scene2",
-    "option1Next": "scene2-ambient",
+  "scene3c": {
+    id: "#scene3c",
+    option1Next: "scene4"
   },
-  "scene3": { //Server comes to table, introduces self
-    "id": "#scene3",
-    "option1Next": "scene4a", //result: "Hi, I'll be your server today, brb with water and menu"
+  "scene4": {
+    id: "#scene4",
+    option1Next: "scene5"
   },
-  "scene4a": { // Server comes back with water and menu
-    "id": "#scene4a",
-    "option1": "Say thank you",
-    "option2": "Say nothing",
-    "option1Next": "scene6",
-    "option2Next": "scene6"//result: here is your water and menu thx for waiting
+  "scene5": {
+    id: "#scene5",
+    option1: "Wait patiently",
+    option2: "Shout for waitress",
+    option1Next: "scene6a",
+    option2Next: "scene6c",
   },
-  "scene4b": { //Shut up 
-    "id": "#scene4b",
-    "option1Next": "scene2-ambient",
+  "scene6a": { //Waitress introduces self
+    id:"#scene6a",
+    option1Next: "scene6b"
+
   },
-  "scene6": { // ambient noise choice
-    "id": "#scene2-ambient",
-    "option1": "Thank you for trying.",
-    "option2": "Experience is over",
-    "option1Next": "scene0",
-    "option2Next": "scene0"
+  "scene6b": {
+    id:"#scene6b",
+    option1Next: "scene8",
+  },
+  "scene6c": {
+    id:"#scene6c",
+    option1Next: "scene6d"//No menus
+    },
+  "scene6d": {
+    id:"#scene6d",
+    option1Next: "scene5"
+  },
+  "scene8": {
+    id: "#scene8",
+    option1Next: "scene9"
+  },
+  "scene9": {//Scene11 needs to be reworked, comes before 10-1
+    id: "#scene9",
+    option1: "Do nothing, it's fine",
+    option2: "Ask waitress to turn the volume down", // Need approaches table and waits scene 
+    option1Next: "scene10-1",
+    option2Next: "scene9b",
+  },
+  "scene9b": {//Scene 11 needs to be reworked, comes before 10-1
+    id: "#scene9b",
+    option1Next: "scene10-1"
+  },
+  "scene10-1": { //Need to the 10_placing_order still 
+    id: "#scene10-1",
+    option1: "Pizza and Salad",
+    option1: "Pizza and Salad",
+    option1Next: "scene10-2",
+    option2Next: "scene10-2"
+  },
+  "scene10-2": {
+    id: "#scene10-2",
+    option1Next: "scene12"
+  },
+  "scene11": {
+    id: "#scene11",
+    option1: "Yes",
+    option2: "No"
+  }, 
+  "scene12": {
+    id: "#scene12",
+    option1Next: "scene13"
+  },
+  "scene13": {
+    id: "#scene13",
+    option1: "Do nothing, it's fine.",
+    option2: "Cover ears with hands",
+    option1Next: "scene14",
+    option2next: "scene14",
+  },
+  "scene14": {
+    id:"#scene14",
+    option1Next: "scene15",
+  },
+  "scene15": {
+    id:"#scene15",
+    option1: "Wait patiently.",
+    option2: "Shout for food.",
+    option3: "Raise hand",
+    option1Next: "scene16c",
+    option2Next: "scene16b",
+    option3Next: "scene16c"
+  },
+  
+  "scene16b": {
+    id:"#scene16b",
+    option1Next: "scene16c",
+  },
+  "scene16c": {
+    id:"#scene16c",
+    option1Next: "scene17a"
+  },
+
+  "scene17a": { //No other option
+    id: "#scene17a",
+    option1: "Pizza n fries is okay.",
+    option2: "Excuse me, I ordered a salad.",
+    option1Next: "scene19a",
+    option2Next: "scene18b",
+  },
+  "scene18b": {
+    id:"#scene18b",
+    option1Next: "scene19a"
+  },
+  "scene19a": {
+    id:"#scene19a",
+    option1Next: "scene19b",
+  },
+  "scene19b": { //Still is going to be added: 19D cleared table still
+    id: "#scene19b",
+    option1: "Leave tip",
+    option2: "Don't leave tip",
+    option1Next: "scene19c",
   }
 }
-
-
 
 //Move all of our elements to global variables
 

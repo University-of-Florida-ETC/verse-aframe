@@ -1,0 +1,20 @@
+Scene1  
+  -> Still: outsidePiesanos Door.jpg
+    -> approaching host.jpg
+      -> scene3a
+
+Scene3a
+  Options: Say nothing(scene3b Follow me) or Say greeting (scene3c Follow me)
+    3b -> back to 3a
+    3c -> scene4
+
+Scene4
+  -> Scene5 (ambient waiting for server)
+
+Scene5
+  -> Scene6a (server introduces self)
+
+Scene 6a
+  -> Scene6b (Server brings water and menu)
+  
+
