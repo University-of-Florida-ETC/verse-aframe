@@ -58,10 +58,10 @@ const videoPathMap = {
   },
   "scene8": {
     id: "#scene8",
-    option1Next: "scene9"
+    option1Next: "scene9ambient"
   },
-  "scene9": {//Scene11 needs to be reworked, comes before 10-1
-    id: "#scene9",
+  "scene9ambient": {//Scene11 needs to be reworked, comes before 10-1
+    id: "#scene9ambient",
     option1: "Do nothing, it's fine",
     option2: "Ask waitress to turn the volume down", // Need approaches table and waits scene 
     option1Next: "scene10-1",
@@ -147,7 +147,7 @@ const videoPathMap = {
 //Move all of our elements to global variables
 
 function beginExperience() {
-  let myVideo = document.getElementById("scene0");
+  let myVideo = document.getElementById("scene1");
   document.getElementById("videoSphere").setAttribute("loop", true);
   document.getElementById("startButton").setAttribute("visible", "false");
   document.getElementById("playPlane").removeAttribute("data-clickable");
@@ -260,15 +260,15 @@ function populateButtons(scene) {
 }
 
 function enterRestaurant() {
-  document.getElementById("scene0").pause();
+  document.getElementById("scene1").pause();
   let videoSphere = document.getElementById("videoSphere");
   let option1 = document.getElementById("option1");
   let option1Plane = document.getElementById("option1Plane");
   let option2 = document.getElementById("option2");
   let option2Plane = document.getElementById("option2Plane");
-  let myVideo = document.querySelector("#scene1-0");
+  let myVideo = document.querySelector("#scene3a");
   let enterButton = document.getElementById("enterButton");
-  videoSphere.setAttribute("src", "#scene1-0");
+  videoSphere.setAttribute("src", "#scene3a");
   videoSphere.setAttribute("loop", false);
   enterButton.setAttribute("visible", "false");
   document.getElementById("enterPlane").removeAttribute("data-clickable");
@@ -276,6 +276,6 @@ function enterRestaurant() {
   option1Plane.setAttribute("data-clickable");
   option2.setAttribute("visible", "true");
   option2Plane.setAttribute("data-clickable");
-  populateButtons("scene1-0");
+  populateButtons("scene3a");
   myVideo.play();
 }

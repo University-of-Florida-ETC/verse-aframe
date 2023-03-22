@@ -47,10 +47,12 @@
       </a-assets>
       <!--Create the camera for the scene, enable fuse for Gaze based interactions-->
       <a-camera id="camera">
-        <a-cursor raycaster="objects: [data-clickable];" fuse="true" fuse-timeout="750" id="cursor" color="blue"></a-cursor>
+        <a-cursor raycaster="objects: [data-clickable];" fuse="true" fuse-timeout="750" id="cursor" color="#6BA7FF"
+        animation__mouseenter="property: scale; to: 0.1 0.1 0.1; startEvents: mouseenter; dur:750;"
+        animation__mouseleave="property:scale; to: 1 1 1; startEvents: mouseleave; dur:250;"></a-cursor>
       </a-camera>
       <!--Create the sky (for our purposes, the sky is the video, and the limit) for the scene-->
-      <a-videosphere src="#scene0" id="videoSphere" rotation="0 -90 0"></a-videosphere>
+      <a-videosphere src="#scene1" id="videoSphere" rotation="0 -90 0"></a-videosphere>
 
 
       <!--Buttons-->
@@ -62,16 +64,16 @@
         align="center"
         onclick="beginExperience()"
         visible="true">
-        <a-plane color="#6bc96b"
+        <a-plane color="#426E49"
           id="playPlane"
           data-clickable
           scale="0.8 0.5 1"
           animation= "property:material.color;
-          to:#db4109;
+          to:#1D615C;
           dur:500;
           startEvents:mouseenter;"
           animation__leave= "property:material.color;
-          to:#6bc96b;
+          to:#426E49;
           dur:500;
           startEvents:mouseleave;
           ">
@@ -84,15 +86,15 @@
         align="center"
         onclick="enterRestaurant()"
         visible="false">
-        <a-plane color="#6bc96b"
+        <a-plane color="#426E49"
           scale="0.8 0.5 1"
           id="enterPlane"
           animation= "property:material.color;
-          to:#db4109;
+          to:#1D615C;
           dur:500;
           startEvents:mouseenter;"
           animation__leave= "property:material.color;
-          to:#6bc96b;
+          to:#426E49;
           dur:500;
           startEvents:mouseleave;
           ">
@@ -105,15 +107,15 @@
         align="center"
         onclick="handleChoice(this.id)"
         visible="false">
-        <a-plane color="#6bc96b"
+        <a-plane color="#426E49"
           id="option1Plane"
           scale="0.8 0.5 1"
           animation= "property:material.color;
-          to:#db4109;
+          to:#1D615C;
           dur:500;
           startEvents:mouseenter;"
           animation__leave= "property:material.color;
-          to:#6bc96b;
+          to:#426E49;
           dur:500;
           startEvents:mouseleave;
           ">
@@ -126,21 +128,19 @@
         align="center"
         onclick="handleChoice(this.id)"
         visible="false">
-        <a-plane color="#6bc96b"
+        <a-plane color="#426E49"
           id="option2Plane"
           scale="0.8 0.5 1"
           animation= "property:material.color;
-          to:#db4109;
+          to:#1D615C;
           dur:500;
           startEvents:mouseenter;"
           animation__leave= "property:material.color;
-          to:#6bc96b;
+          to:#426E49;
           dur:500;
           startEvents:mouseleave;
           ">
       </a-text>
-
-
     </a-scene>
   </body>
 </html>
